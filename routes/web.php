@@ -29,6 +29,7 @@ Route::get('test',function (){
 Route::get('admin',function (){
    return view('admin.layout.index');
 });
-Route::get('admin_theloai',function (){
-   return view('admin.theloai.danhsach');
+Route::get('login',function (){
+   return view('admin.login');
 });
+Route::group(['prefix'=>'admin']); //group kiểu prefix có tên là admin
