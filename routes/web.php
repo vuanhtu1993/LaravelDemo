@@ -26,3 +26,6 @@ Route::get('test',function (){
 
    }
 });
+Route::get('admin',function (){
+   return view('admin.layout.index');
+});
