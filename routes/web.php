@@ -11,6 +11,18 @@
 |
 */
 
+use App\TheLoai;
+
+
 Route::get('/', function () {
     return view('welcome');
+});
+Auth::routes();
+Route::get('test',function (){
+   $theloai = TheLoai::find(1);
+
+   foreach ($theloai->loaitin as $loaitin){
+       echo $loaitin->Ten."<br>";
+
+   }
 });
