@@ -32,4 +32,20 @@ Route::get('admin',function (){
 Route::get('login',function (){
    return view('admin.login');
 });
-Route::group(['prefix'=>'admin']); //group kiểu prefix có tên là admin
+Route::group(['prefix'=>'admin'],function (){
+    Route::group(['prefix'=>'theloai'],function (){
+        Route::get('danhsach','TheLoaiController@getDanhSach');
+        Route::get('them','ThemController@getThem');
+        Route::get('sua','SuaController@getSua');
+    });
+    Route::group(['prefix'=>'loaitin'],function (){
+        Route::get('danhsach','TheLoaiController@getDanhSach');
+        Route::get('them','ThemController@getThem');
+        Route::get('sua','SuaController@getSua');
+    });
+    Route::group(['prefix'=>'tintuc'],function (){
+        Route::get('danhsach','TheLoaiController@getDanhSach');
+        Route::get('them','ThemController@getThem');
+        Route::get('sua','SuaController@getSua');
+    });
+}); //group Route kiểu prefix tên là admin route admin/theloai/danhsach
