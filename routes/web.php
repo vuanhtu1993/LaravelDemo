@@ -35,6 +35,7 @@ Route::get('login',function (){
 Route::group(['prefix'=>'admin'],function (){
     Route::group(['prefix'=>'theloai'],function (){
         Route::get('danhsach','TheLoaiController@getDanhSach');
+
         Route::get('them','TheLoaiController@getThem');
         Route::post('them','TheLoaiController@postThem');
 

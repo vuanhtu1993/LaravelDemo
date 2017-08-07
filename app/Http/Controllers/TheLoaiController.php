@@ -15,6 +15,11 @@ class TheLoaiController extends Controller
 
         return view('admin.theloai.them');
     }
+    public function postThem(Request $request){
+         echo $request->Ten;
+
+    }
+
     public function getSua(){
 
     }

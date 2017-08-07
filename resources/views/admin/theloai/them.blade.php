@@ -14,7 +14,7 @@
                     <form action="admin/theloai/them" method="POST">
                         <div class="form-group">
                             <input type="hidden" name="_token" value="{{csrf_token()}}">
-                            <label>Category Name</label>
+                            <label>Tên thể loại</label>
                             <input class="form-control" name="Ten" placeholder="Please Enter Category Name"/>
                         </div>
                         <button type="submit" class="btn btn-default">Category Add</button>
