@@ -14,7 +14,8 @@
                 <thead>
                 <tr align="center">
                     <th>ID</th>
-                    <th>Name</th>
+                    <th>Tên</th>
+                    <th>Tên không dấu</th>
                     <th>Delete</th>
                     <th>Edit</th>
                 </tr>
@@ -25,6 +26,7 @@
                 <tr class="odd gradeX" align="center">
                     <td><?php echo $row->id ?></td>
                     <td><?php echo $row->Ten ?></td>
+                    <td><?php echo $row->TenKhongDau ?></td>
                     <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="admin/theloai/xoa"> Delete</a></td>
                     <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="admin/theloai/sua/{{$row->id}}">Edit</a></td>
                 </tr>
