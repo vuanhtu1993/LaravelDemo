@@ -22,11 +22,14 @@ class TheLoaiController extends Controller
 
     public function postThem(Request $request)
     { //Request $request to receive from function Post
-        echo $request->Ten;
-        echo changeTitle($request->Ten);
-        $postThem = new TheLoai();
-        $postThem->Ten = $request->Ten;
-        $postThem->TenKhongDau = changeTitle($request->Ten);
+//        echo $request->Ten;
+//        echo changeTitle($request->Ten);
+        $theloai = new TheLoai();
+        $theloai->Ten = $request->Ten;
+        $theloai->TenKhongDau = changeTitle($request->Ten);
+        $theloai->save();
+        return redirect('admin/theloai/them') ->with('thongbao','Thêm thành công'); //show on view
+
     }
 
     public function getSua()

@@ -10,6 +10,14 @@
                     </h1>
                 </div>
                 <!-- /.col-lg-12 -->
+
+                {{--Sẽ show thông báo nếu có  ->with('thongbao','Thêm thành công');--}}
+                @if(session('thongbao'))
+                    <div class="alert alert-success">
+                        {{session('thongbao')}}
+                    </div>
+                    @endif
+
                 <div class="col-lg-7" style="padding-bottom:120px">
                     <form action="admin/theloai/them" method="POST">
                         <div class="form-group">
