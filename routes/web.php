@@ -35,17 +35,17 @@ Route::get('login',function (){
 Route::group(['prefix'=>'admin'],function (){
     Route::group(['prefix'=>'theloai'],function (){
         Route::get('danhsach','TheLoaiController@getDanhSach');
-        Route::get('them','ThemController@getThem');
-        Route::get('sua','SuaController@getSua');
+        Route::get('them','TheLoaiController@getThem');
+        Route::get('sua','TheLoaiController@getSua');
     });
     Route::group(['prefix'=>'loaitin'],function (){
-        Route::get('danhsach','TheLoaiController@getDanhSach');
-        Route::get('them','ThemController@getThem');
-        Route::get('sua','SuaController@getSua');
+        Route::get('danhsach','LoaiTinController@getDanhSach');
+        Route::get('them','LoaiTinController@getThem');
+        Route::get('sua','LoaiTinController@getSua');
     });
     Route::group(['prefix'=>'tintuc'],function (){
-        Route::get('danhsach','TheLoaiController@getDanhSach');
-        Route::get('them','ThemController@getThem');
-        Route::get('sua','SuaController@getSua');
+        Route::get('danhsach','TinTucController@getDanhSach');
+        Route::get('them','TinTucController@getThem');
+        Route::get('sua','TinTucController@getSua');
     });
 }); //group Route kiểu prefix tên là admin route admin/theloai/danhsach
