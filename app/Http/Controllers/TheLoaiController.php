@@ -20,15 +20,21 @@ class TheLoaiController extends Controller
         return view('admin.theloai.them');
     }
 
-    public function postThem(Request $request)
-    { //Request $request to receive from function Post
-//        echo $request->Ten;
-//        echo changeTitle($request->Ten);
+    public function postThem(Request $request) { //Request $request to receive from function Post
+
+        $this->validate($request,[
+            'Ten' =>'required|min:3|max:100'
+        ],
+        [
+          'Ten.required'=>'Chưa nhập tên thể loại',
+            'Ten.min'=>'Tên thể loại phải có từ 3 đến 100 kí tự',
+            'Ten.max'=>'Tên thể loại phải có từ 3 đến 100 kí tự'
+        ]);
         $theloai = new TheLoai();
         $theloai->Ten = $request->Ten;
         $theloai->TenKhongDau = changeTitle($request->Ten);
         $theloai->save();
-        return redirect('admin/theloai/them') ->with('thongbao','Thêm thành công'); //show on view
+        return redirect('admin/theloai/them')->with('thongbao','Thêm thành công'); //show on view
 
     }
 
