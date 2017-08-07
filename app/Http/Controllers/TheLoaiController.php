@@ -13,6 +13,7 @@ class TheLoaiController extends Controller
     }
     public function getThem(){
 
+        return view('admin.theloai.them');
     }
     public function getSua(){
 
