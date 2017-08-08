@@ -26,7 +26,7 @@ class TheLoaiController extends Controller
             'Ten' =>'required|min:3|max:100'
         ],
         [
-          'Ten.required'=>'Chưa nhập tên thể loại',
+          'Ten.required'=>'Chưa nhập tên thể loại', //chưa nhập gì đã upload
             'Ten.min'=>'Tên thể loại phải có từ 3 đến 100 kí tự',
             'Ten.max'=>'Tên thể loại phải có từ 3 đến 100 kí tự'
         ]);
