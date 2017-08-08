@@ -42,4 +42,8 @@ class TheLoaiController extends Controller
     {
 
     }
+
+    public function getXoa(){
+        
+    }
 }

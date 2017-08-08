@@ -41,6 +41,8 @@ Route::group(['prefix'=>'admin'],function (){
 
         Route::get('sua','TheLoaiController@getSua');
 
+        Route::get('xoa','TheLoaiController@getXoa');
+
     });
     Route::group(['prefix'=>'loaitin'],function (){
         Route::get('danhsach','LoaiTinController@getDanhSach');
