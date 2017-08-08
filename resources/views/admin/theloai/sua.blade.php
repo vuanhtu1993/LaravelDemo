@@ -1,49 +1,30 @@
-@extends("admin.layout.index")
+@extends('admin.layout.index')
 @section('content')
-<!-- Page Content -->
-<div id="page-wrapper">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-12">
-                <h1 class="page-header">Category
-                    <small>List</small>
-                </h1>
+    <!-- Page Content -->
+    <div id="page-wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">Thể Loại
+                        <small>{{$theloai->Ten}}</small>
+                    </h1>
+                </div>
+                <!-- /.col-lg-12 -->
+                <div class="col-lg-7" style="padding-bottom:120px">
+                    <form action="admin/theloai/sua/{{$theloai->id}}" method="POST">
+                        <div class="form-group">
+                            <input type="hidden" name="_token" value="{{csrf_token()}}">
+                            <label>Tên thể loại</label>
+                            <input class="form-control" name="Ten" placeholder="Tên thể loại mới" value="{{$theloai->Ten}}"/>
+                        </div>
+                        <button type="submit" class="btn btn-default">Sửa</button>
+                        <button type="reset" class="btn btn-default">Reset</button>
+                    </form>
+                </div>
             </div>
-            <!-- /.col-lg-12 -->
-            <table class="table table-striped table-bordered table-hover" id="dataTables-example">
-                <thead>
-                <tr align="center">
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Category Parent</th>
-                    <th>Status</th>
-                    <th>Delete</th>
-                    <th>Edit</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr class="odd gradeX" align="center">
-                    <td>1</td>
-                    <td>Tin Tức</td>
-                    <td>None</td>
-                    <td>Hiện</td>
-                    <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="#"> Delete</a></td>
-                    <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="#">Edit</a></td>
-                </tr>
-                <tr class="even gradeC" align="center">
-                    <td>2</td>
-                    <td>Bóng Đá</td>
-                    <td>Thể Thao</td>
-                    <td>Ẩn</td>
-                    <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="#"> Delete</a></td>
-                    <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="#">Edit</a></td>
-                </tr>
-                </tbody>
-            </table>
+            <!-- /.row -->
         </div>
-        <!-- /.row -->
+        <!-- /.container-fluid -->
     </div>
-    <!-- /.container-fluid -->
-</div>
-<!-- /#page-wrapper -->
-    @endsection
+    <!-- /#page-wrapper -->
+@endsection

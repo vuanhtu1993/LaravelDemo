@@ -7,11 +7,11 @@ use Illuminate\Http\Request;
 
 class TheLoaiController extends Controller
 {
-    //
+
     public function getDanhSach()
     {
         $theloai = TheLoai::all(); //gán biến $theloai = TheLoai::all() để tìm các thành phần của bảng TheLoai
-        return view('admin.theloai.danhsach', ['theloai' => $theloai]); //truyền biến $theloai vào view danhsach
+        return view('admin.theloai.danhsach', ['theloai' => $theloai]); //truyền biến $theloai ra view danhsach
     }
 
     public function getThem()
@@ -37,13 +37,18 @@ class TheLoaiController extends Controller
         return redirect('admin/theloai/them')->with('thongbao','Thêm thành công'); //show on view
 
     }
-
-    public function getSua()
+    public function getSua($id)
     {
+        $theloai = TheLoai::find($id);
+        return view('admin/theloai/sua',['theloai'=>$theloai]);
+    }
+
+    public function postSua($id){
 
     }
 
-    public function getXoa(){
-        
+    public function getXoa($id){ // nhận giá trị $id từ route
+        TheLoai::find($id)->delete();
+        return back();
     }
 }

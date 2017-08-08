@@ -39,9 +39,10 @@ Route::group(['prefix'=>'admin'],function (){
         Route::get('them','TheLoaiController@getThem');
         Route::post('them','TheLoaiController@postThem');
 
-        Route::get('sua','TheLoaiController@getSua');
+        Route::get('sua/{id}','TheLoaiController@getSua');
+        Route::post('sua/{id}','TheLoaiController@postSua');
 
-        Route::get('xoa','TheLoaiController@getXoa');
+        Route::get('xoa/{id}','TheLoaiController@getXoa'); // xoa/{id} đón giá trị id và truyền vào Controller
 
     });
     Route::group(['prefix'=>'loaitin'],function (){

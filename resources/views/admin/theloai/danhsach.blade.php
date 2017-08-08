@@ -27,7 +27,9 @@
                     <td><?php echo $row->id ?></td>
                     <td><?php echo $row->Ten ?></td>
                     <td><?php echo $row->TenKhongDau ?></td>
+
                     <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="admin/theloai/xoa/{{$row->id}}"> Delete</a></td>
+                    {{--gán giá trị của id muốn xóa vào cuối cùng, Route đón id và truyền giá trị vào biến $id--}}
                     <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="admin/theloai/sua/{{$row->id}}">Edit</a></td>
                 </tr>
                 <?php } ?>;
