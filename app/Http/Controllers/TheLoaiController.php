@@ -43,8 +43,19 @@ class TheLoaiController extends Controller
         return view('admin/theloai/sua',['theloai'=>$theloai]);
     }
 
-    public function postSua($id){
-
+    public function postSua(Request $request,$id){
+        $this->validate($request,[
+            'Ten'=>'required|min:3|max:100'
+        ],[
+            'Ten.required'=>'Chưa nhập thể loại mới',
+            'Ten.min'=>'Tên thể loại phải có từ 3 đến 100 kí tự',
+            'Ten.max'=>'Tên thể loại phải có từ 3 đến 100 kí tự'
+        ]);
+        $ten = request('Ten');
+        $theloai  = TheLoai::find($id);
+        $theloai->Ten = $ten;
+        $theloai->save();
+        return back()->with('thongbao','Sửa thành công');
     }
 
     public function getXoa($id){ // nhận giá trị $id từ route

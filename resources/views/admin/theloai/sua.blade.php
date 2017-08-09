@@ -10,6 +10,18 @@
                     </h1>
                 </div>
                 <!-- /.col-lg-12 -->
+                @if(session('thongbao'))
+                    <div class="alert alert-success">
+                        {{session('thongbao')}}
+                    </div>
+                    @endif
+                @if(count($errors)>0)
+                    <div class="alert alert-danger">
+                        @foreach($errors->all() as $error)
+                            {{$error}}
+                            @endforeach
+                    </div>
+                @endif
                 <div class="col-lg-7" style="padding-bottom:120px">
                     <form action="admin/theloai/sua/{{$theloai->id}}" method="POST">
                         <div class="form-group">

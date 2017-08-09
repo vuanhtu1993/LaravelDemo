@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Khóa Học Lập Trình Laravel Framework 5.x Tại Khoa Phạm">
     <meta name="author" content="">
-    <title>Admin - Vu Anh Tus</title>
+    <title>Admin - Vu Anh Tu</title>
     <base href="{{asset('')}}">
     <!-- Bootstrap Core CSS -->
     <link href="admin_access/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
